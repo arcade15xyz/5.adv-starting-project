@@ -25,9 +25,10 @@ function EventsPage() {
 export default EventsPage;
 
 export async function loader() {
-  const response = await fetch('http://localhost:8080/events');
+  const response = await fetch('http://localhost:8080/eventscoco');
   if(!response.ok){
     throw new Response(JSON.stringify({ message: 'Could not fetch events.'}),{status:500});
+    // return json({ message:'Could not fetch events.'},{ status: 500});
   }else{
     return response;
   }
